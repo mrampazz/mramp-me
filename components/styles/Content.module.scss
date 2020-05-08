@@ -63,7 +63,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     height: 500px;
     max-width: 793px;
     & h1 {
@@ -72,7 +72,7 @@
         margin: 0;
         color: #EE6352;
         text-shadow: 0px 0px rgba(41,47,54,0.25);
-        width: 401px;
+        max-width: 401px;
     }
     & h2 {
         font-family: 'Poppins';
@@ -80,7 +80,7 @@
         font-weight: 950;
         margin: 0;
         color: #292F36;
-        width: 401px;
+        max-width: 401px;
         text-align: right;
         text-transform: uppercase;
     }
@@ -124,7 +124,7 @@
     }
     & path {
         transition: all .2s ease-in-out;
-        transform: scale(1.2);
+        transform: scale(1.5);
     }
 }
 
@@ -135,4 +135,42 @@
 
 .text-container {
     margin-bottom: 103px;
+}
+
+@media only screen and (max-width: 500px) {
+    .dark-button, .light-button {
+        font-size: 1em;
+    }
+    .text-container {
+        margin-bottom: 60px;
+    }
+    .button-container {
+        & > :nth-child(1) {
+            margin-right: 15px;
+            text-align: center;
+        }
+        & > :nth-child(2) {
+            margin-left: 15px;
+            text-align: center;
+        }
+        margin-bottom: 80px;
+    }
+    .content-container {
+        & h1 {
+            font-size: 24px;
+        }
+        & p {
+            font-size: 16px;
+        }
+    }
+    .svg-container {
+        & svg {
+            width: auto;
+            height: auto;
+        }
+        & path {
+            transition: all .2s ease-in-out;
+            transform: scale(1.7);
+        }
+    }
 }

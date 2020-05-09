@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  overflow-x: hidden;
+  background-color: #eff1f3;
+}
+
 .container {
   min-height: 100vh;
   display: flex;
@@ -9,7 +15,6 @@
   justify-content: center;
   align-items: center;
   background-color: #eff1f3;
-  overflow-x: hidden;
 }
 .projects-container {
   display: flex;

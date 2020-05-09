@@ -32,7 +32,7 @@
 .light-button {
     width: 230px;
     height: 60px;
-    background-color: transparent;
+    background-color: #eff1f3;
     border: 1px solid #3A506B;
     display: flex;
     justify-content: center;
@@ -59,18 +59,22 @@
 }
 
 .content-container {
+    z-index: 99;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 80%;
-    height: 500px;
+    height: 800px;
     max-width: 793px;
+    padding: 10px;
+
+    // background-color: #EFF1F3;
     & h1 {
         font-family: 'Quicksand';
         font-size: 36px;
         margin: 0;
-        color: #EE6352;
+        color: #3F7098;
         text-shadow: 0px 0px rgba(41,47,54,0.25);
         max-width: 401px;
     }
@@ -92,7 +96,7 @@
         color: #292F36;
         & em {
             font-weight: bold;
-            color: #EE6352;
+            color: #3F7098;
             font-style: normal;
         }
     }
@@ -106,21 +110,19 @@
     width: 100%;
     user-select: none;
     margin-bottom: 120px;
-    & > :nth-child(1) {
-        margin-right: 30px;
-    }
-    & > :nth-child(2) {
-        margin-left: 30px;
-    }
 }
 
 .svg-container {
-    & > a:hover path {
-        fill: #EE6352;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > a:hover {
+        border-bottom: 2px solid #3F7098;
     }
     & > a {
         margin-left: 14px;
         margin-right: 14px;
+        border-bottom: 2px solid transparent;
     }
     & path {
         transition: all .2s ease-in-out;
@@ -161,16 +163,6 @@
         }
         & p {
             font-size: 16px;
-        }
-    }
-    .svg-container {
-        & svg {
-            width: auto;
-            height: auto;
-        }
-        & path {
-            transition: all .2s ease-in-out;
-            transform: scale(1.7);
         }
     }
 }

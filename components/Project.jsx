@@ -51,7 +51,7 @@ const projects = [
     link: {
       text: "jacquesdurand.com",
       url: "https://jacquesdurand.com/#/",
-      repo: "",
+      repo: "https://github.com/mrampazz/website-jd",
     },
     tech: [{bg: '#6E98CC', text: "React"}, {bg: '#8ABEFF', text: "Sass"}],
     img: glasses,
@@ -62,14 +62,14 @@ const projects = [
     id: 1,
     title: "Grafana Prediction",
     link: {
-      text: "Binaries",
-      url: "https://jacquesdurand.com/#/",
-      repo: "https://github.com/VRAM-Software/grafana_prediction",
+      text: "binaries",
+      url: "https://github.com/VRAM-Software/prediction_configuration_utility/releases/tag/v20.0.0",
+      repo: "https://github.com/VRAM-Software/prediction_configuration_utility",
     },
     tech: [{bg: '#6E98CC', text: "React"}, {bg: '#8ABEFF', text: "CSS"}, {bg: '#6E98CC', text: "Electron"}, {bg: '#8ABEFF', text: "Node.js"}],
     img: ml,
     desc:
-      "University project built for the Italian softwarehouse, Zucchetti. Developed as part of a group of seven students. This software is composed of a electron based web application to train SVM and RL machine learning algorithms to predict system failures in server’s machines through a Grafana’s plug-in. I mainly worked on the Electron app",
+      "University project developed for the Italian company, Zucchetti. Developed as part of a group of seven students. This software is composed of a electron based web application to train SVM and RL machine learning algorithms to predict system failures in server’s machines through a Grafana’s plug-in. I mainly worked on the Electron app",
   },
   {
     id: 2,
@@ -122,7 +122,7 @@ const LinkSection = ({ tech, link }) => (
       </div>
       <div>
         <img src='/img/octocat.png' />
-        <a href={link.repo}>code</a>
+        {link.repo ? <a href={link.repo}>code</a> : <a>private</a>}
       </div>
     </div>
   </div>

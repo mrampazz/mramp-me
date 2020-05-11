@@ -98,7 +98,7 @@
   align-items: flex-start;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 150px;
+  flex-basis: 180px;
 }
 
 .container {
@@ -188,6 +188,12 @@
   .proj-container {
     margin-top: 40px;
     margin-bottom: 40px;
+  }
+  .tech {
+    margin-top: 15px;
+  }
+  .link {
+    flex-basis: 100%;
   }
   .desc-container {
     width: 90vw;

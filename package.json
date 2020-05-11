@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "formik": "^2.1.4",
+    "node-fetch": "^2.6.0",
     "yup": "^0.28.5"
   }
 }

@@ -27,6 +27,10 @@
     margin-bottom: 50px;
     flex-wrap: wrap;
   }
+  & .loading {
+    background-color: #3a506b;
+  }
+
   & button {
     font-family: "Open Sans";
     max-height: 40px;
@@ -54,9 +58,52 @@
     }
   }
 
+
+.input-container,
+.textarea-container,
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 360px;
+  margin-bottom: 10px;
+  & .input-error {
+    border: 1px solid rgba($color: red, $alpha: 1);
+  }
+  & .valid {
+    border: 1px solid rgba($color: #139a43, $alpha: 1);
+  }
+
+  .label {
+    color: #3a506b;
+    width: 100%;
+    font-size: 14px;
+    font-family: "Open Sans";
+    margin-bottom: 5px;
+  }
+
+  & .error {
+    width: 100%;
+    color: red;
+    font-size: 14px;
+    font-family: "Open Sans";
+    margin-bottom: 5px;
+  }
   & input,
   & textarea,
   & select {
+    font-family: "Open Sans";
+    max-height: 40px;
+    height: 40px;
+    width: 360px;
+    max-width: 360px;
+    background-color: #eff1f3;
+    color: #292f36;
+    border-radius: 4px;
+    border: 1px solid rgba($color: #3a506b, $alpha: 0.2);
+    padding-left: 15px;
+    font-size: 16px;
     transition: all 0.1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   }
 
@@ -68,82 +115,31 @@
   }
 }
 
-.input-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  & .input-error {
-    border: 1px solid rgba($color: red, $alpha: 1);
-  }
-  
   & input {
     box-sizing: border-box;
-    font-family: "Open Sans";
-    max-height: 40px;
-    height: 40px;
-    width: 360px;
-    max-width: 360px;
-    background-color: #eff1f3;
-    color: #292f36;
-    border-radius: 4px;
-    border: 1px solid rgba($color: #3a506b, $alpha: 0.2);
-    padding-left: 15px;
-    font-size: 16px;
   }
-  margin-bottom: 20px;
-}
 
-.select-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  & .input-error {
-    border: 1px solid rgba($color: red, $alpha: 1);
-  }
-  & select {
-    font-family: "Open Sans";
-    max-height: 40px;
-    height: 40px;
-    width: 360px;
-    max-width: 360px;
-    background-color: #eff1f3;
-    color: #292f36;
-    border-radius: 4px;
-    border: 1px solid rgba($color: #3a506b, $alpha: 0.2);
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 16px;
-  }
-  margin-bottom: 20px;
-}
-
-.textarea-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  & .input-error {
-    border: 1px solid rgba($color: red, $alpha: 1);
-  }
   & textarea {
     box-sizing: border-box;
-    font-family: "Open Sans";
     max-height: 170px;
     resize: none;
     min-height: 100px;
     height: 138px;
-    width: 360px;
-    max-width: 360px;
-    background-color: #eff1f3;
-    border-radius: 4px;
-    border: 1px solid rgba($color: #3a506b, $alpha: 0.2);
-    padding-left: 15px;
-    padding-top: 10px;
-    font-size: 16px;
   }
-  margin-bottom: 20px;
+  & > span {
+    display: block;
+    margin-bottom: 0;
+    height: 20px;
+    width: 100%;
+  }
+}
+
+.status-msg {
+  margin-top: 5px;
+  display: block;
+  height: 20px;
+  width: 100%;
+  max-width: 360px;
 }
 
 .separator {
@@ -156,27 +152,13 @@
 }
 
 
-.label {
-  font-size: 14px;
-  color: #3a506b;
-  font-family: "Open Sans";
-  margin-bottom: 5px;
-}
-
-.error {
-  color: red;
-  font-size: 14px;
-  font-family: "Open Sans";
-  margin-bottom: 5px;
-}
-
 @media only screen and (max-width: 884px) {
   .separator {
     display: none;
   }
   .container {
     & form {
-      & > div:first-child {
+      & > div {
         flex-basis: 100%;
         display: flex;
         justify-content: center;
@@ -189,7 +171,12 @@
     & select,
     & button,
     & textarea {
-      width: 90vw;
+      width: 100%;
     }
+  }
+  .input-container,
+  .textarea-container,
+  .select-container {
+    width: 100%;
   }
 }

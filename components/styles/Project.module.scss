@@ -99,6 +99,9 @@
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 180px;
+  & svg {
+    margin-top: 23px
+  }
 }
 
 .container {

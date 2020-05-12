@@ -3,7 +3,6 @@ import styles from "./styles/Contact.module.scss";
 import { SvgLink } from "./Hero";
 import { withFormik } from "formik";
 import NodeFetch from "node-fetch";
-
 import * as Yup from "yup";
 
 const formikEnhancer = withFormik({
@@ -11,9 +10,7 @@ const formikEnhancer = withFormik({
     name: Yup.string().min(2, "Name must be longer than 2 characters").required("Name is required"),
     email: Yup.string().email("Invalid e-mail address").required("E-mail is required"),
     reason: Yup.string().required("Reason is required"),
-    msg: Yup.string()
-      .min(5, "Message must be five or more characters")
-      .required("Message is required"),
+    msg: Yup.string().min(5, "Message must be five or more characters").required("Message is required"),
   })
     .required()
     .noUnknown(),
@@ -25,11 +22,12 @@ const formikEnhancer = withFormik({
       if (res.status === 200) {
         resetForm({});
         setStatus({ msg: "E-mail sent successfully" });
+        setSubmitting(false);
       } else {
         setStatus({ msg: `Error occured with code: ${res.status}` });
+        setSubmitting(false);
       }
     });
-    setSubmitting(false);
   },
   mapPropsToValues: () => ({
     name: "",
@@ -39,6 +37,97 @@ const formikEnhancer = withFormik({
   }),
   displayName: "MyForm",
 });
+
+const spinner = (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    style={{ margin: "auto", background: "transparent" }}
+    width='36'
+    height='36'
+    viewBox='0 0 100 100'
+    preserveAspectRatio='xMidYMid'
+    display='block'
+  >
+    <circle
+      cx='50'
+      cy='50'
+      fill='none'
+      stroke='#eff1f3'
+      stroke-width='7'
+      r='29'
+      stroke-dasharray='136.659280431156 47.553093477052'
+      transform='rotate(15.426 50 50)'
+    >
+      <animateTransform
+        attributeName='transform'
+        type='rotate'
+        repeatCount='indefinite'
+        dur='1s'
+        values='0 50 50;360 50 50'
+        keyTimes='0;1'
+      />
+    </circle>
+  </svg>
+);
+
+const Input = ({ id, error, value, handleBlur, handleChange, label }) => (
+  <div className={styles["input-container"]}>
+    <label htmlFor={id} className={error ? styles["error"] : styles["label"]}>
+      {label}
+    </label>
+    <input
+      className={`${error ? styles["input-error"] : null} ${!error && value ? styles["valid"] : null}`}
+      id={id}
+      onChange={handleChange}
+      onBlur={handleBlur}
+      value={value}
+    ></input>
+    <span className={styles["error"]}>{error}</span>
+  </div>
+);
+
+const TextArea = ({ id, error, value, handleBlur, handleChange, label }) => (
+  <div className={styles["textarea-container"]}>
+    <label htmlFor={id} className={error ? styles["error"] : styles["label"]}>
+      {label}
+    </label>
+    <textarea
+      className={`${error ? styles["input-error"] : null} ${!error && value ? styles["valid"] : null}`}
+      id={id}
+      onChange={handleChange}
+      onBlur={handleBlur}
+      value={value}
+    ></textarea>
+    <span className={styles["error"]}>{error}</span>
+  </div>
+);
+
+const Select = ({ id, error, value, handleBlur, handleChange, label, children }) => (
+  <div className={styles["select-container"]}>
+    <label htmlFor={id} className={error ? styles["error"] : styles["label"]}>
+      {label}
+    </label>
+    <select
+      id={id}
+      onBlur={handleBlur}
+      onChange={handleChange}
+      value={value}
+      className={`${error ? styles["input-error"] : null} ${!error && value ? styles["valid"] : null}`}
+    >
+      <option value='' selected={true} disabled={true}>
+        Select option
+      </option>
+      {children}
+    </select>
+    <span className={styles["error"]}>{error}</span>
+  </div>
+);
+
+const SubmitButton = ({ children, isSubmitting }) => (
+  <button className={isSubmitting ? styles["loading"] : null} type='submit' disabled={isSubmitting}>
+    {children}
+  </button>
+);
 
 const ContactForm = (props) => {
   const {
@@ -52,89 +141,54 @@ const ContactForm = (props) => {
     isSubmitting,
     status,
     resetForm,
+    isValid,
   } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <div className={styles["input-container"]}>
-          <label
-            htmlFor="name"
-            className={touched.name && errors.name ? styles["error"] : styles["label"]}
-          >
-            Name
-          </label>
-          <input
-            id="name"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={values.name}
-            className={touched.name && errors.name ? styles["input-error"] : null}
-          />
-          <span className={styles["error"]}>{touched.name && errors.name}</span>
-        </div>
-        <div className={styles["input-container"]}>
-          <label
-            htmlFor="email"
-            className={touched.email && errors.email ? styles["error"] : styles["label"]}
-          >
-            E-mail
-          </label>
-          <input
-            id="email"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={values.email}
-            className={touched.email && errors.email ? styles["input-error"] : null}
-          />
-          <span className={styles["error"]}>{touched.email && errors.email}</span>
-        </div>
-        <div className={styles["select-container"]}>
-          <label
-            htmlFor="reason"
-            className={touched.reason && errors.reason ? styles["error"] : styles["label"]}
-          >
-            Reason
-          </label>
-          <select
-            id="reason"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={values.reason}
-            className={touched.reason && errors.reason ? styles["input-error"] : null}
-          >
-            <option value="" selected={true} disabled={true}>
-              Select option
-            </option>
-            <option value="work">For work</option>
-            <option value="hi">Say hi</option>
-          </select>
-          <span className={styles["error"]}>{touched.reason && errors.reason}</span>
-        </div>
+        <Input
+          id='name'
+          error={touched.name && errors.name}
+          value={values.name}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          label='Name'
+        />
+        <Input
+          id='email'
+          error={touched.email && errors.email}
+          value={values.email}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          label='E-mail'
+        />
+
+        <Select
+          id='reason'
+          error={touched.reason && errors.reason}
+          value={values.reason}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          label='Reason'
+        >
+          <option value='work'>For work</option>
+          <option value='hi'>Say hi</option>
+        </Select>
       </div>
       <div>
         <span className={styles["separator"]} />
       </div>
       <div>
-        <div className={styles["textarea-container"]}>
-          <label
-            htmlFor="msg"
-            className={touched.msg && errors.msg ? styles["error"] : styles["label"]}
-          >
-            Message
-          </label>
-          <textarea
-            id="msg"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={values.msg}
-            className={touched.msg && errors.msg ? styles["input-error"] : null}
-          />
-          <span className={styles["error"]}>{touched.msg && errors.msg}</span>
-        </div>
-        <button type="submit" disabled={isSubmitting}>
-          Submit
-        </button>
-        {status && status.msg && <span className={styles["label"]}>{status.msg}</span>}
+        <TextArea
+          id='msg'
+          error={touched.msg && errors.msg}
+          value={values.msg}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          label='Message'
+        />
+        <SubmitButton isSubmitting={isSubmitting}> {isSubmitting ? spinner : "Submit"} </SubmitButton>
+        <span className={`${styles["label"]} ${styles["status-msg"]} `}>{status ? status.msg : null}</span>
       </div>
     </form>
   );

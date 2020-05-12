@@ -86,12 +86,6 @@ const projects = [
   },
 ];
 
-const ButtonSmall = ({ children, href }) => (
-  <a href={href} className={styles["link"]}>
-    <div className={styles["button"]}>{children}</div>
-  </a>
-);
-
 const linkIcon = (
   <svg width='15' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path

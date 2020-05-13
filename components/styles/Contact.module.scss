@@ -84,6 +84,8 @@
   }
 
   & .error {
+    display: block;
+    height: 20px;
     width: 100%;
     color: red;
     font-size: 14px;
@@ -125,6 +127,7 @@
     resize: none;
     min-height: 100px;
     height: 138px;
+    padding-top: 10px;
   }
   & > span {
     display: block;

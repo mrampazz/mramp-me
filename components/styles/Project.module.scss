@@ -81,6 +81,14 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    & > span {
+      text-transform: none;
+      letter-spacing: normal;
+      margin-left: 5px;
+      font-size: 13px;
+      font-family: 'Open Sans';
+      color: #eff1f3;
+    }
     & > a {
       text-transform: none;
       letter-spacing: normal;
@@ -88,6 +96,9 @@
       font-size: 13px;
       font-family: 'Open Sans';
       color: #eff1f3;
+      &:hover {
+        color: #6e98cc;
+      }
     }
   }
 }

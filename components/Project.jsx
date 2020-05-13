@@ -116,7 +116,7 @@ const LinkSection = ({ tech, link }) => (
       </div>
       <div>
         <img src='/img/octocat.png' />
-        {link.repo ? <a href={link.repo}>code</a> : <a>private</a>}
+        {link.repo ? <a href={link.repo}>code</a> : <span>private</span>}
       </div>
     </div>
   </div>

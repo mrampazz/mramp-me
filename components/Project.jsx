@@ -102,8 +102,8 @@ const linkIcon = (
 const LinkSection = ({ tech, link }) => (
   <div className={styles["link-container"]}>
     <div className={styles["tech"]}>
-      {tech.map((i) => (
-        <div>
+      {tech.map((i, index) => (
+        <div key={index}>
           <div style={{background: `${i.bg}`}} className={styles["circle"]} />
           <span>{i.text}</span>
         </div>

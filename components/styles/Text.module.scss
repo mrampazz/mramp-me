@@ -1,0 +1,80 @@
+.title-container {
+  padding: 0.5em;
+  margin-bottom: 5em;
+}
+
+.title-container > h1 {
+  text-transform: uppercase;
+  font-family: "Raleway";
+  letter-spacing: 1.2px;
+  font-weight: 900;
+  font-size: 1.3em;
+  color: #3f3d56;
+}
+
+.sectionTitle-container {
+  padding: 0.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.sectionTitle-container > h2 {
+  font-family: "Raleway";
+  font-weight: 900;
+  font-size: 1.8em;
+  color: #3f3d56;
+}
+
+.paragraphTitle-container {
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.paragraphTitle-container > h3 {
+  font-family: "Raleway";
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #3f3d56;
+}
+
+.paragraphTitle-container > span {
+  display: block;
+  height: 18px;
+  width: 100%;
+  background-color: rgba($color: #008bf8, $alpha: 0.3);
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  z-index: -2;
+}
+
+.normalText-container {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.normalText-container > p {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height: 20px;
+  color: #3f3d56;
+}
+
+.normalText-container em {
+  font-weight: 600;
+  font-style: normal;
+}
+
+.normalLink {
+  color: #3d3885;
+}
+
+
+@media only screen and (max-width: 850px) {
+  .title-container {
+    align-self: flex-end;
+  }
+}

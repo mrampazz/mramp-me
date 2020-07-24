@@ -1,15 +1,15 @@
 .title-container {
   padding: 0.5em;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 
 .title-container > h1 {
-  text-transform: uppercase;
-  font-family: "Raleway";
+  font-family: 'DM Serif Display', serif;
   letter-spacing: 1.2px;
-  font-weight: 900;
-  font-size: 1.3em;
-  color: #3f3d56;
+  font-size: 72px;
+  color: #E6332A;
+  font-style: italic;
+  user-select: none;
 }
 
 .sectionTitle-container {
@@ -22,7 +22,7 @@
   font-family: "Raleway";
   font-weight: 900;
   font-size: 1.8em;
-  color: #3f3d56;
+  color: #29235C;
 }
 
 .paragraphTitle-container {
@@ -34,7 +34,7 @@
   font-family: "Raleway";
   font-weight: 500;
   font-size: 1.5em;
-  color: #3f3d56;
+  color: #29235C;
 }
 
 .paragraphTitle-container > span {
@@ -54,13 +54,13 @@
 }
 
 .normalText-container > p {
-  font-family: "Raleway";
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 1.1em;
   letter-spacing: 1px;
   word-spacing: 2px;
-  line-height: 20px;
-  color: #3f3d56;
+  line-height: 22px;
+  color: #29235C;
 }
 
 .normalText-container em {
@@ -69,12 +69,5 @@
 }
 
 .normalLink {
-  color: #3d3885;
-}
-
-
-@media only screen and (max-width: 850px) {
-  .title-container {
-    align-self: flex-end;
-  }
+  color: #E6332A;
 }

@@ -10,13 +10,13 @@ export const Hero = () => (
     <Logo />
     <Title>marco rampazzo</Title>
     <div className={styles["row-container"]}>
-      <div className={styles['hero-pattern-container']}>
+      <div className={styles["hero-pattern-container"]}>
         <HeroPattern />
       </div>
       <div className={styles["col-container"]}>
         <ParagraphTitle>Hello!</ParagraphTitle>
         <div>
-          <NormalText> {txt1} </NormalText>
+          <NormalText> I am Marco Rampazzo, a junior web developer currently residing in Italy, I’m studying computer science at the university of Padova. During my free time I enjoy basketball a good movie and some coffe.</NormalText>
           <NormalText>
             If you want to work together send me an e-mail at <NormalLink href='mailto:mrampazz@gmail.com'>mrampazz@gmail.com</NormalLink>
           </NormalText>

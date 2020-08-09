@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #29235C;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 900;
+    width: 200px;
+}
+
+.container svg {
+    margin-left: 20px;
+    position: absolute;
+    top: 12px;
+    transform: scale(2);
+}
+
+.container span {
+    margin-left: 40px;
+}
+

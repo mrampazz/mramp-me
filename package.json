@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "formik": "^2.1.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "yup": "^0.28.5"
   }
 }

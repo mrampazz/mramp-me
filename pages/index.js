@@ -1,75 +1,56 @@
-import Head from "next/head";
-import { Section } from "../components/Section";
-import { NormalText, NormalLink } from "../components/Text";
-import React, { useState, useEffect } from "react";
-import { Menu } from "../components/Menu";
-import { Carousel } from "../components/Carousel";
+import React, { useState, useEffect } from 'react'
 
 export default function Home() {
-  const [cursorHidden, setCursor] = useState(false);
-
-  const callback = (e) => {
-    const cursorTrail = document.querySelector(".cursor-trail");
-    setTimeout(() => {
-      cursorTrail.style.left = `${e.pageX}px`;
-      cursorTrail.style.top = `${e.pageY}px`;
-    }, 50);
-  };
-  const handleMouseMove = (e, callback) => {
-    const cursor = document.querySelector(".cursor");
-    cursor.style.left = `${e.pageX}px`;
-    cursor.style.top = `${e.pageY}px`;
-    e.persist();
-    callback(e);
-  };
-
-  const handleMouseClick = (ev) => {
-    const x = ev.clientX;
-    const y = ev.clientY;
-    let node = document.querySelector(".ripple");
-    let newNode = node.cloneNode(true);
-    newNode.classList.add("animate");
-    newNode.style.left = ev.clientX - 5 + "px";
-    newNode.style.top = ev.clientY - 5 + "px";
-    node.parentNode.replaceChild(newNode, node);
-  };
-
-  useEffect(() => {
-    const links = document.getElementsByTagName("a");
-    const cursorTrail = document.querySelector(".cursor-trail");
-    for (let i = 0; i < links.length; i++) {
-      const l = links[i];
-      l.addEventListener("mouseenter", () => {
-        cursorTrail.style.transform = "scale(2) translateX(-25%) translateY(-25%)";
-        cursorTrail.style.mixBlendMode = "difference";
-      });
-      l.addEventListener("mouseleave", () => {
-        cursorTrail.style.transform = "scale(1) translateX(-50%) translateY(-50%)";
-      });
-    }
-  });
   return (
-    <div className='container'>
-      <div className='bg' />
-      <Head>
-        <title>mrampazz</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'></meta>
-        <link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap' rel='stylesheet' />
-      </Head>
-      <main id='main-container' onClick={(e) => handleMouseClick(e)} onMouseMove={(e) => handleMouseMove(e, callback)} onMouseEnter={() => setCursor(true)} onMouseLeave={() => setCursor(false)}>
-        <div className='ripple'></div>
-        <div className={cursorHidden ? "cursors" : "cursors-hidden"}>
-          <div className='cursor' />
-          <div className='cursor-trail' />
+    <>
+      <div className='hero-container'>
+        <div className='title'>
+          <h1>MARCO RAMPAZZO</h1>
         </div>
-
-        <Section title='Hey!'>
-          <NormalText> I am Marco Rampazzo, a junior web developer currently residing in Italy, I’m studying computer science at the university of Padova. During my free time I enjoy basketball a good movie and some coffe.</NormalText>
-          <NormalText>
-            If you want to work together send me an e-mail at <NormalLink href='mailto:mrampazz@gmail.com'>mrampazz@gmail.com</NormalLink>
-          </NormalText>
-        </Section>
-      </main>
-    </div>
-  );
+        <div className='subtitle'>
+          <h2>FULL STACK WEB DEV</h2>
+        </div>
+        <div className='description'>
+          <p>
+            <strong>Welcome!</strong> I'm a full stack web developer that has
+            worked with the full stack in both a team environment and as a
+            freelancer, mainly interested in the web but open to other areas of
+            software development.
+          </p>
+          <p>
+            Currently working @{' '}
+            <a href='https://gruppo4.com' target='_blank'>
+              gruppo4
+            </a>
+          </p>
+        </div>
+        <div className='social-links'>
+          <div>
+            <a href='https://github.com/mrampazz' target='_blank'>
+              github
+            </a>
+          </div>
+          <div>
+            <a href='https://www.linkedin.com/in/mrampazz/' target='_blank'>
+              linkedIn
+            </a>
+          </div>
+          <div>
+            <a href='https://mailto:mrampazz@gmail.com/' target='_blank'>
+              mail me
+            </a>
+          </div>
+          {/* <div>
+            <a href=''>github</a>
+          </div> */}
+        </div>
+        <div className='photo-container'></div>
+      </div>
+      <div>
+        <div className='title'></div>
+        <div className='exp-entries-container'></div>
+      </div>
+      {/* <div></div> */}
+    </>
+  )
 }

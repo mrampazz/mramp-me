@@ -8,9 +8,12 @@ import Head from 'next/head'
 import AppContext from '../utils/AppContext'
 
 export default function MyApp({ Component, pageProps }) {
-  const [darkMode, setDarkMode] = useCookieState()
-  const [loading, setLoadingPage] = useState()
+  const [mounted, setMounted] = useState(false)
+  const [darkMode, setDarkMode] = useCookieState('darkmode', false)
+  const [loading, setLoadingPage] = useState(false)
   const router = useRouter()
+
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => setLoadingPage(true))
@@ -18,8 +21,10 @@ export default function MyApp({ Component, pageProps }) {
     router.events.on('routeChangeError', () => setLoadingPage(false))
   }, [router.events])
 
+  if (!mounted) return null
+
   return (
-    <AppContext.Provider value={{ a: 2 }}>
+    <AppContext.Provider value={{ darkMode, setDarkMode }}>
       <Head>
         <title>mramp</title>
         <link rel='preconnect' href='https://fonts.googleapis.com'></link>
@@ -30,11 +35,21 @@ export default function MyApp({ Component, pageProps }) {
         ></link>
         <link
           href='https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
+          rel='preload'
+          as='style'
+        ></link>
+        <link
+          href='https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
           rel='stylesheet'
         ></link>
         <link
           href='https://fonts.googleapis.com/css2?family=Poppins&display=swap'
           rel='stylesheet'
+        ></link>
+        <link
+          href='https://fonts.googleapis.com/css2?family=Poppins&display=swap'
+          rel='preload'
+          as='style'
         ></link>
       </Head>
       <Layout>

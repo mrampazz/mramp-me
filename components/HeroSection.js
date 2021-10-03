@@ -10,8 +10,7 @@ export default function HeroSection() {
       <div className='description'>
         <p>
           I'm a full stack web developer that has worked in both a team
-          environment and as a freelancer, mainly interested in the web but open
-          to other areas of software development. Currently working @{' '}
+          environment and as a freelancer. Currently working @{' '}
           <a href='https://gruppo4.com' target='_blank'>
             gruppo4
           </a>

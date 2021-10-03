@@ -43,7 +43,7 @@ export default function ProfileSection() {
         >
           My name is Marco, I'm a keen web developer, fluent in written and
           spoken English (C1), BsC in Computer Science, ~ 3 years of experience
-          as a full stack developer (freelance &amp; company)
+          (freelance &amp; company)
         </p>
         <Separator />
         <h4>Some stuff I've worked with recently</h4>
@@ -51,13 +51,13 @@ export default function ProfileSection() {
           className={classNames('tech', { animate: techVisible || techAnim })}
           ref={techRef}
         >
-          <li>javascript</li>
-          <li>typescript</li>
-          <li>react</li>
-          <li>nextjs</li>
-          <li>nodejs</li>
-          <li>docker</li>
-          <li>headless CMS</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Node.js</li>
+          <li>Docker</li>
+          <li>Headless CMS</li>
         </ul>
       </div>
       <div className='cta-container'>

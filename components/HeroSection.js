@@ -21,7 +21,7 @@ export default function HeroSection() {
         <SocialLinks />
       </div>
       <div className='cta-container'>
-        <CtaLink href='#'>Resume</CtaLink>
+        <CtaLink href='https://mramp.me/resume.pdf'>Resume</CtaLink>
       </div>
       <div className='waves'>
         <WavesSeparator />

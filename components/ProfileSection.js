@@ -1,7 +1,5 @@
 import { useInView } from 'react-intersection-observer'
 import classNames from 'classnames'
-import profileImage from '../public/profile.png'
-import Image from 'next/image'
 import Separator from './Separator'
 import CtaLink from './CtaLink'
 import { useEffect, useState } from 'react'
@@ -35,7 +33,7 @@ export default function ProfileSection() {
         })}
         ref={imgRef}
       >
-        <Image src={profileImage} />
+        <img src='https://mramp.me/photos/profile.png' />
       </div>
       <div className='info'>
         <h3>Hey :)</h3>
@@ -63,7 +61,7 @@ export default function ProfileSection() {
         </ul>
       </div>
       <div className='cta-container'>
-        <CtaLink href='#' dark>
+        <CtaLink href='https://mramp.me/resume.pdf' dark>
           Resume
         </CtaLink>
       </div>

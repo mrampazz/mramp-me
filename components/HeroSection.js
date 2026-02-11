@@ -1,30 +1,28 @@
-import SocialLinks from './SocialLinks'
-import { WavesSeparator } from './icons'
-import CtaLink from './CtaLink'
+import SocialLinks from "./SocialLinks";
+import { WavesSeparator } from "./icons";
+import CtaLink from "./CtaLink";
+
 export default function HeroSection() {
   return (
-    <div className='hero-container'>
-      <div className='title'>
+    <div className="hero-container">
+      <div className="title">
         <h1>Marco Rampazzo</h1>
       </div>
-      <div className='description'>
+      <div className="description">
         <p>
           I'm a full stack web developer that has worked in both a team
-          environment and as a freelancer. Currently working @{' '}
-          <a href='https://gruppo4.com' target='_blank'>
-            gruppo4
-          </a>
+          environment and as a freelancer.
         </p>
       </div>
-      <div className='social-links'>
+      <div className="social-links">
         <SocialLinks />
       </div>
-      <div className='cta-container'>
-        <CtaLink href='https://mramp.me/resume.pdf'>Resume</CtaLink>
+      <div className="cta-container">
+        <CtaLink href="https://mramp.me/resume.pdf">Resume</CtaLink>
       </div>
-      <div className='waves'>
+      <div className="waves">
         <WavesSeparator />
       </div>
     </div>
-  )
+  );
 }

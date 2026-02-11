@@ -1,41 +1,41 @@
-import { useInView } from 'react-intersection-observer'
-import classNames from 'classnames'
-import Separator from './Separator'
-import CtaLink from './CtaLink'
-import { useEffect, useState } from 'react'
+import { useInView } from "react-intersection-observer";
+import classNames from "classnames";
+import Separator from "./Separator";
+import CtaLink from "./CtaLink";
+import { useEffect, useState } from "react";
 
 export default function ProfileSection() {
   const { ref: imgRef, inView: imgVisible } = useInView({
     threshold: 0.5,
-  })
+  });
   const { ref: techRef, inView: techVisible } = useInView({
     threshold: 0.5,
-  })
+  });
   const { ref: textRef, inView: textVisible } = useInView({
     threshold: 0.5,
-  })
+  });
 
-  const [imgAnim, setImgAnim] = useState(false)
-  const [techAnim, setTechAnim] = useState(false)
-  const [textAnim, setTextAnim] = useState(false)
+  const [imgAnim, setImgAnim] = useState(false);
+  const [techAnim, setTechAnim] = useState(false);
+  const [textAnim, setTextAnim] = useState(false);
 
   useEffect(() => {
-    if (imgVisible) setImgAnim(true)
-    if (techVisible) setTechAnim(true)
-    if (textVisible) setTextAnim(true)
-  }, [imgVisible, techVisible, textVisible])
+    if (imgVisible) setImgAnim(true);
+    if (techVisible) setTechAnim(true);
+    if (textVisible) setTextAnim(true);
+  }, [imgVisible, techVisible, textVisible]);
 
   return (
-    <div className='profile-section'>
+    <div className="profile-section">
       <div
-        className={classNames('img-container', {
+        className={classNames("img-container", {
           animate: imgVisible || imgAnim,
         })}
         ref={imgRef}
       >
-        <img src='https://mramp.me/photos/profile.png' />
+        <img src="https://mramp.me/photos/profile.png" />
       </div>
-      <div className='info'>
+      <div className="info">
         <h3>Hey :)</h3>
         <p
           ref={textRef}
@@ -48,7 +48,7 @@ export default function ProfileSection() {
         <Separator />
         <h4>Some stuff I've worked with recently</h4>
         <ul
-          className={classNames('tech', { animate: techVisible || techAnim })}
+          className={classNames("tech", { animate: techVisible || techAnim })}
           ref={techRef}
         >
           <li>JavaScript</li>
@@ -58,13 +58,15 @@ export default function ProfileSection() {
           <li>Node.js</li>
           <li>Docker</li>
           <li>Headless CMS</li>
+          <li>Rust</li>
+          <li>Solid.js</li>
         </ul>
       </div>
-      <div className='cta-container'>
-        <CtaLink href='https://mramp.me/resume.pdf' dark>
+      <div className="cta-container">
+        <CtaLink href="https://mramp.me/resume.pdf" dark>
           Resume
         </CtaLink>
       </div>
     </div>
-  )
+  );
 }

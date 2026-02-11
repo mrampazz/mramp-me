@@ -9,15 +9,14 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "classnames": "^2.3.1",
-    "next": "^11.1.2",
-    "node-sass": "^4.14.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-intersection-observer": "^8.32.1"
+    "classnames": "^2.5.1",
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-intersection-observer": "^9.13.0",
+    "sass": "^1.77.0"
   },
   "devDependencies": {
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.3.2"
   }
 }

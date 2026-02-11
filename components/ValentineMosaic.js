@@ -22,27 +22,27 @@ export default function ValentineMosaic() {
 
   // List of all images in the valentine folder
   const images = [
-    "IMG-20250910-WA0046.jpg",
-    "IMG_20241013_113455.jpg",
-    "IMG_20241013_140602.jpg",
-    "IMG_20241110_202446.jpg",
-    "IMG_20241111_105819_1.jpg",
-    "IMG_20241112_152324.jpg",
-    "IMG_20250827_191507.jpg",
-    "IMG_20241112_173507.jpg",
-    "IMG_20250804_180116.jpg",
-    "IMG_20241114_185535.jpg",
-    "IMG_20241115_145049.jpg",
-    "IMG-20241231-WA0001.jpg",
-    "IMG_20241116_145925.jpg",
-    "IMG_20241208_181651.jpg",
-    "IMG_20250104_224543.jpg",
-    "IMG_20250208_215722.jpg",
-    "IMG-20250913-WA0009.jpg",
-    "IMG_20250327_111601.jpg",
-    "IMG_20250328_141647.jpg",
-    "IMG_20250911_134528.jpg",
-    "Locket_1717363401471_56.jpg",
+    "IMG-20250910-WA0046.webp",
+    "IMG_20241013_113455.webp",
+    "IMG_20241013_140602.webp",
+    "IMG_20241110_202446.webp",
+    "IMG_20241111_105819_1.webp",
+    "IMG_20241112_152324.webp",
+    "IMG_20250827_191507.webp",
+    "IMG_20241112_173507.webp",
+    "IMG_20250804_180116.webp",
+    "IMG_20241114_185535.webp",
+    "IMG_20241115_145049.webp",
+    "IMG-20241231-WA0001.webp",
+    "IMG_20241116_145925.webp",
+    "IMG_20241208_181651.webp",
+    "IMG_20250104_224543.webp",
+    "IMG_20250208_215722.webp",
+    "IMG-20250913-WA0009.webp",
+    "IMG_20250327_111601.webp",
+    "IMG_20250328_141647.webp",
+    "IMG_20250911_134528.webp",
+    "Locket_1717363401471_56.webp",
   ];
 
   return (
@@ -88,7 +88,7 @@ function MosaicItem({ image, index }) {
       style={{ animationDelay: `${index * 0.05}s` }}
     >
       <img
-        src={`/valentine/${image}`}
+        src={`/valentine-webp/${image}`}
         alt={`Memory ${index + 1}`}
         loading="lazy"
       />

@@ -176,7 +176,7 @@ export default function HeroSection() {
     <div className="hero-container">
       <div className="title">
         <img src="https://mramp.me/photos/profilepic.jpeg" />
-        <h1>Marco Rampazzo 🇮🇹</h1>
+        <h1>Marco Rampazzo</h1>
       </div>
       <div className="description">
         <p>

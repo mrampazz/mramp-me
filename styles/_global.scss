@@ -9,6 +9,7 @@
 body {
   overflow-x: hidden;
   min-width: 100vw;
+  background: $bg-color;
 }
 
 h1,
@@ -17,13 +18,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Inter';
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
 }
 
 p,
 li,
 span {
-  font-family: 'Poppins';
+  font-family: "IBM Plex Mono", monospace;
 }
 
 a {
@@ -47,7 +49,7 @@ a {
 .cta-link {
   z-index: 99;
   text-decoration: none;
-  font-family: 'Poppins';
+  font-family: "IBM Plex Mono", monospace;
   font-size: 1em;
   font-weight: 500;
   display: inline-block;

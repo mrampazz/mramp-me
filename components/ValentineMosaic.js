@@ -51,7 +51,7 @@ export default function ValentineMosaic() {
         ref={headerRef}
         className={classNames("valentine-header", { animate: headerAnim })}
       >
-        <h1>Alcuni dei nostri momenti...</h1>
+        <h1>Alcuni momenti insieme</h1>
       </header>
 
       <div className="mosaic-columns">
@@ -64,7 +64,7 @@ export default function ValentineMosaic() {
         ref={footerRef}
         className={classNames("valentine-footer", { animate: footerAnim })}
       >
-        <p>Buon san Valentino Amore ❤️</p>
+        <p>Ricordi che porto con me</p>
       </footer>
     </div>
   );

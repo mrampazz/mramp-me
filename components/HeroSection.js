@@ -174,38 +174,40 @@ const LinkedinIcon = ({
 export default function HeroSection() {
   return (
     <div className="hero-container">
-      <div className="title">
-        <img src="https://mramp.me/photos/profilepic.jpeg" />
-        <h1>Marco Rampazzo</h1>
-      </div>
-      <div className="description">
-        <p>
-          6+ years of experience full-stack engineer & tech lead focused on
-          building high-performance web applications. Driven by complex
-          technical challenges, slick UI architectures, and building niche,
-          specialized developer software
-        </p>
-        <p>
-          Remote first, fluent in written and spoken english, BsC in Computer
-          Science in Padua
-        </p>
-      </div>
-      <div className="social-links">
-        <a href="mailto:mrampazz@gmail.com/">
-          <MailIcon size={32} />
-        </a>
-        <a href="https://github.com/mrampazz">
-          <GithubIcon size={32} />
-        </a>
-        <a href="https://www.linkedin.com/in/mrampazz/">
-          <LinkedinIcon size={32} />
-        </a>
-      </div>
-      <div className="cta-container">
-        <CtaLink href="https://mramp.me/resume.pdf">Resume</CtaLink>
-      </div>
-      <div className="waves">
-        <WavesSeparator />
+      <div className="hero">
+        <div className="title">
+          <img src="https://mramp.me/photos/profilepic.jpeg" />
+          <h1>Marco Rampazzo</h1>
+        </div>
+        <div className="description">
+          <p>
+            <b>Full-Stack Engineer & Tech Lead</b> with 6+ years of experience
+            building high-performance web applications. Driven by complex
+            technical challenges, slick UI architectures, and specialized
+            developer tooling. Remote-first, fluent in written and spoken
+            English, with a BSc in Computer Science.
+          </p>
+          <p>
+            Passionate about building niche tools - from code editors and PDF
+            viewers to TUIs. Strong <b>React</b> and <b>TypeScript</b>{" "}
+            foundation, paired with <b>Express</b>, <b>GraphQL</b>, and a soft
+            spot for <b>Rust</b>.
+          </p>
+        </div>
+        <div className="social-links">
+          <a href="mailto:mrampazz@gmail.com/">
+            <MailIcon size={32} />
+          </a>
+          <a href="https://github.com/mrampazz">
+            <GithubIcon size={32} />
+          </a>
+          <a href="https://www.linkedin.com/in/mrampazz/">
+            <LinkedinIcon size={32} />
+          </a>
+        </div>
+        <div className="cta-container">
+          <CtaLink href="https://mramp.me/resume.pdf">Resume</CtaLink>
+        </div>
       </div>
     </div>
   );
